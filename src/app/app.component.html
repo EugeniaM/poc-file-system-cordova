@@ -1,27 +1,3 @@
-<div
-  class="search-result"
-  infinite-scroll
-  [infiniteScrollDistance]="2"
-  (scrolled)="onScrollDown()"
-  [scrollWindow]="false">
-
-  <div *ngFor="let movie of movies" class="container">
-    <div class="row">
-      <div class="row-title">Title</div>
-      <div class="row-value">{{ movie.Title }}</div>
-    </div>
-    <div class="row">
-      <div class="row-title">Type</div>
-      <div class="row-value">{{ movie.Type }}</div>
-    </div>
-    <div class="row">
-      <div class="row-title">Year</div>
-      <div class="row-value">{{ movie.Year }}</div>
-    </div>
-    <div class="row">
-      <div class="row-title">ID</div>
-      <div class="row-value">{{ movie.imdbID }}</div>
-    </div>
-  </div>
-
-</div>
+<div>HELLO!!!</div>
+<button (click)="test()">TEST</button>
+<button (click)="readFile()">READ</button>

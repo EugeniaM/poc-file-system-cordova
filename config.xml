@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.scroll.infinite" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>InfiniteScroll</name>
+<widget id="com.system.file" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>FileSystem</name>
     <description />
-    <author email="maltsevae88@gmail.com">Scroll</author>
+    <author email="maltsevae88@gmail.com">FileSystem</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
@@ -94,6 +94,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-statusbar" spec="~2.4.1" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.0.0" />
 </widget>
