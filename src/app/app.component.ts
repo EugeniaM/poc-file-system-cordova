@@ -11,12 +11,20 @@ export class AppComponent {
   test() {
       (<any>window).requestFileSystem  = (<any>window).requestFileSystem || (<any>window).webkitRequestFileSystem;
 
-    // (<any>navigator).webkitPersistentStorage.requestQuota(5 * 1024 * 1024, (grantedBytes) => {
-    //     (<any>window).requestFileSystem((<any>window).PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-    //   }, function(e) {
-    //     console.log('Error ===>', e);
-    //   });
-      (<any>window).requestFileSystem((<any>window).LocalFileSystem.PERSISTENT, 5 * 1024 * 1024, this.onInitFs.bind(this), this.errorHandler);
+      if ((<any>navigator).webkitPersistentStorage) {
+        (<any>navigator).webkitPersistentStorage.requestQuota(5 * 1024 * 1024, (grantedBytes) => {
+            (<any>window).requestFileSystem((<any>window).PERSISTENT, grantedBytes, this.onInitFs.bind(this), this.errorHandler);
+          }, function(e) {
+            console.log('Error ===>', e);
+          });
+      } else {
+        (<any>window).requestFileSystem(
+          (<any>window).LocalFileSystem.PERSISTENT,
+          5 * 1024 * 1024,
+          this.onInitFs.bind(this),
+          this.errorHandler
+        );
+      }
   }
 
   onInitFs(fs) {
